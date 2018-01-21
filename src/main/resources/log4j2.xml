@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appenders>
+        <RollingFile name="RollingFile" fileName="/var/log/favoriot/app.log"
+                     filePattern="/var/log/ble/$${date:yyyy-MM}/app1-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout>
+                <!--<pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} %-5level %t %logger->%M [%L] : %msg%xEx%n</pattern>-->
+                <pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} %-5level %t %logger->%M [%L] : %msg%xEx%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy /><!-- Rotated everyday -->
+                <SizeBasedTriggeringPolicy size="100 MB"/> <!-- Or every 100 MB -->
+            </Policies>
+        </RollingFile>
+    </appenders>
+    <loggers> 
+        <!--        <category name="org.hibernate">
+            <priority value="OFF" />
+        </category>
+        <category name="org.spring">
+            <priority value="OFF" />
+        </category>
+        <category name="org.atmosphere">
+            <priority value="OFF" />
+        </category>
+        <category name="org.shiro">
+            <priority value="OFF" />
+        </category>
+        <category name="com.mchange">
+            <priority value="OFF" />
+        </category>-->
+        <root level="debug"> <!-- We log everything -->
+            <appender-ref ref="RollingFile"/> <!-- And to a rotated file -->
+        </root>
+        <logger name="org" level="debug"/>
+         
+    </loggers>
+        
+</configuration>
