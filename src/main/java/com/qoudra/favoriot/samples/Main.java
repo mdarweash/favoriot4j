@@ -6,10 +6,8 @@
 package com.qoudra.favoriot.samples;
 
 import com.google.gson.Gson;
-import com.qoudra.favoriot.beans.FavorProjectBean;
 import com.qoudra.favoriot.comm.FavorIoTClient;
 import com.qoudra.favoriot.comm.FavorIotRESTfulBuilder;
-import java.io.PrintStream;
 
 /**
  *
@@ -22,13 +20,26 @@ public class Main {
     public static void main(String[] args) {
 
         Gson g = new Gson();
+        
         FavorIotRESTfulBuilder favorIotRESTfulBuilder = new FavorIotRESTfulBuilder(API_KEY);
         FavorIoTClient favorIoTClient = favorIotRESTfulBuilder.getFavorIoTClient();
 
-        System.out.println(g.toJson(favorIoTClient.getApplicationsListByProject("projectDefault@Mdarweash")));
-        FavorProjectBean favorProjectBean = new FavorProjectBean();
-        favorProjectBean.setDescription("Qoudra Api Test");
-        System.out.println(g.toJson(favorIoTClient.updateProject("projectDefault@Mdarweash", favorProjectBean)));
+        //--------------Projects----------------------
+//        System.out.println(g.toJson(favorIoTClient.getApplicationsListByProject("projectDefault@Mdarweash")));
+//        FavorProjectBean favorProjectBean = new FavorProjectBean();
+//        favorProjectBean.setDescription("Qoudra Api Test");
+//        System.out.println(g.toJson(favorIoTClient.updateProject("projectDefault@Mdarweash", favorProjectBean)));
+        
+        //--------------Groups----------------------
+//        print(favorIoTClient.getGroupsByApplication("applicationDefault@Mdarweash"));
+//        print(favorIoTClient.getAllApplications(null, null, 0, null, 0, 0, FavorIoTClient.ORDER_ENUM.DESC, 0));
+//        print(favorIoTClient.getApplication("applicationDefault@Mdarweash"));
+//        print(favorIoTClient.addApplication("applicationDefault@Mdarweash"));
+    }
+    public static void print(Object c)
+    {
+        Gson g = new Gson();
+        System.out.println(g.toJson(c));
     }
 
 }

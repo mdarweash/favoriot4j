@@ -25,19 +25,14 @@ import retrofit.http.Query;
  */
 public interface FavorIoTClient {
 
-    enum ORDER_ENUM {
+    public enum ORDER_ENUM {
         ASC, DESC;
     };
     String CONTENT_TYPE = "application/json;charset=utf-8";
 
-//    @POST(value = CommonConstants.METHOD_DISTRIBUTE_ACTION)
-//    Response distributeAction(@Body ActionBean message) throws Exception;
-//    
-//    @POST(value = CommonConstants.METHOD_LOG_RECEIVED)
-//    String logReceived(@Body Message message) throws Exception;
-//    
-//    @POST(value = CommonConstants.METHOD_LOG_RECEIVED)
-//    String logReceived(@Body String message) throws Exception;
+    /**
+     * PROJECTS
+     */
     @GET(value = "/projects")
     GetAllProjectsResponse getAllProjects(@Query("project_name") String project_name,
             @Query("project_developer_id") String project_developer_id,
@@ -66,5 +61,34 @@ public interface FavorIoTClient {
 
     @GET(value = "/projects/{project_developer_id}/apps/{application_developer_id}")
     FavorApplicationBean getApplicationByProject(@Path("project_developer_id") String project_developer_id, @Path("application_developer_id") String application_developer_id);
+
+    //----------------Applications-----------------
+        
+    @POST(value = "/apps")
+    FavorProjectBean addApplication(@Body FavorApplicationBean favorApplicationBean);
+
+    @GET(value = "/apps")
+    FavorProjectBean getAllApplications(
+            @Query("application_name") String aplication_name,
+            @Query("application_developer_id") String application_developer_id,
+            @Query("created_at") long created_at,
+            @Query("created_from_to") String created_from_to,
+            @Query("max") int max,
+            @Query("sort") int sort,
+            @Query("order") ORDER_ENUM order,
+            @Query("offset") int offset
+    );
+
+    @GET(value = "/apps/{application_developer_id}")
+    FavorApplicationBean getApplication(@Query("application_developer_id") String application_developer_id);
+
+    @PUT(value = "/apps/{application_developer_id}")
+    FavorApplicationBean updateApplication(@Query("application_developer_id") String application_developer_id, @Body FavorApplicationBean favorApplicationBean);
+
+    @DELETE(value = "/apps/{application_developer_id}")
+    ResponseBean deleteApplication(@Query("application_developer_id") String application_developer_id);
+
+    @GET(value = "/applications/{application_developer_id}/groups")
+    GetGroupsByApplicationResponse getGroupsByApplication(@Query("application_developer_id") String application_developer_id);
 
 }
