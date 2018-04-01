@@ -1,9 +1,0 @@
-{
-  "description": "No Desc",
-  "active": true,
-  "device_type": "arduino",
-  "sensor_type": "temperature",
-  "timezone": "Asia/Kuala_Lumpur",
-  "latitude": 0,
-  "longitude": 0
-}
