@@ -1,0 +1,16 @@
+{
+  "code": 2005,
+  "message": "Device updated",
+  "details": {
+    "device_id": "b771141b-aa8b-44f3-a18a-3b29bb7579a2",
+    "group_developer_id": "groupDefault@FAVORIOT",
+    "device_developer_id": "deviceDefault@FAVORIOT",
+    "description": "no description",
+    "deveice_name": "deviceDefault",
+    "active": true,
+    "latitude": null,
+    "longitude": null,
+    "timezone": "Asia/Kuala_Lumpur",
+    "user_id": "FAVORIOT"
+  }
+}

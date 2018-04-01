@@ -9,7 +9,6 @@ package com.qoudra.favoriot.comm;
  *
  * @author manara
  */
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import retrofit.RequestInterceptor;
 
 /**

@@ -35,6 +35,10 @@ public class Main {
 //        print(favorIoTClient.getAllApplications(null, null, 0, null, 0, 0, FavorIoTClient.ORDER_ENUM.DESC, 0));
 //        print(favorIoTClient.getApplication("applicationDefault@Mdarweash"));
 //        print(favorIoTClient.addApplication("applicationDefault@Mdarweash"));
+
+        
+
+    
     }
     public static void print(Object c)
     {

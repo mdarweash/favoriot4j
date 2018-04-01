@@ -6,11 +6,17 @@
 package com.qoudra.favoriot.comm;
 
 import com.qoudra.favoriot.beans.AddProjectResponse;
+import com.qoudra.favoriot.beans.CreateDeviceParam;
+import com.qoudra.favoriot.beans.CreateDeviceResponse;
 import com.qoudra.favoriot.beans.FavorApplicationBean;
 import com.qoudra.favoriot.beans.FavorProjectBean;
 import com.qoudra.favoriot.beans.GetAllProjectsResponse;
 import com.qoudra.favoriot.beans.GetApplicationsByProjectBean;
 import com.qoudra.favoriot.beans.ResponseBean;
+import com.qoudra.favoriot.beans.generated.DeleteDeviceResponse;
+import com.qoudra.favoriot.beans.generated.GetAllStreamsByDevice;
+import com.qoudra.favoriot.beans.generated.GetDeviceResponse;
+import com.qoudra.favoriot.beans.generated.UpdateDeviceResponse;
 import retrofit.http.Body;
 import retrofit.http.DELETE;
 import retrofit.http.GET;
@@ -63,7 +69,6 @@ public interface FavorIoTClient {
     FavorApplicationBean getApplicationByProject(@Path("project_developer_id") String project_developer_id, @Path("application_developer_id") String application_developer_id);
 
     //----------------Applications-----------------
-        
     @POST(value = "/apps")
     FavorProjectBean addApplication(@Body FavorApplicationBean favorApplicationBean);
 
@@ -90,5 +95,24 @@ public interface FavorIoTClient {
 
     @GET(value = "/applications/{application_developer_id}/groups")
     GetGroupsByApplicationResponse getGroupsByApplication(@Query("application_developer_id") String application_developer_id);
+
+    //------------------Devices-----------------
+    @POST(value = "/devices")
+    CreateDeviceResponse createDevice(@Body CreateDeviceParam createDeviceParam);
+
+    @GET(value = "/devices")
+    CreateDeviceResponse getAllDevices(@Body CreateDeviceParam createDeviceParam);
+
+    @GET(value = "/devices/{device_developer_id}")
+    GetDeviceResponse getDevice(@Query("device_developer_id") String device_developer_id);
+
+    @PUT(value = "/devices/{device_developer_id}")
+    UpdateDeviceResponse updateDevice(@Query("device_developer_id") String device_developer_id, @Body UpdateDeviceResponse updateDeviceResponse);
+
+    @DELETE(value = "/devices/{device_developer_id}")
+    DeleteDeviceResponse delDevice(@Query("device_developer_id") String device_developer_id);
+
+    @GET(value = "/devices/{device_developer_id}/streams")
+    GetAllStreamsByDevice getAllDevices(@Query("device_developer_id") String device_developer_id);
 
 }
