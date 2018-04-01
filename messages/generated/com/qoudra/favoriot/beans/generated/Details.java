@@ -7,39 +7,36 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class Details {
 
-    private String deviceId;
-    private String groupDeveloperId;
-    private String deviceDeveloperId;
+    private String id;
+    private String groupId;
+    private String appId;
     private String description;
-    private String deveiceName;
-    private boolean active;
-    private Object latitude;
-    private Object longitude;
-    private String timezone;
-    private String userId;
+    private boolean enabled;
+    private String name;
+    private String owner;
 
-    public String getDeviceId() {
-        return deviceId;
+    public String getId() {
+        return id;
     }
 
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getGroupDeveloperId() {
-        return groupDeveloperId;
+    public String getGroupId() {
+        return groupId;
     }
 
-    public void setGroupDeveloperId(String groupDeveloperId) {
-        this.groupDeveloperId = groupDeveloperId;
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
-    public String getDeviceDeveloperId() {
-        return deviceDeveloperId;
+    public String getAppId() {
+        return appId;
     }
 
-    public void setDeviceDeveloperId(String deviceDeveloperId) {
-        this.deviceDeveloperId = deviceDeveloperId;
+    public void setAppId(String appId) {
+        this.appId = appId;
     }
 
     public String getDescription() {
@@ -50,62 +47,38 @@ public class Details {
         this.description = description;
     }
 
-    public String getDeveiceName() {
-        return deveiceName;
+    public boolean isEnabled() {
+        return enabled;
     }
 
-    public void setDeveiceName(String deveiceName) {
-        this.deveiceName = deveiceName;
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
-    public boolean isActive() {
-        return active;
+    public String getName() {
+        return name;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Object getLatitude() {
-        return latitude;
+    public String getOwner() {
+        return owner;
     }
 
-    public void setLatitude(Object latitude) {
-        this.latitude = latitude;
-    }
-
-    public Object getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Object longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getTimezone() {
-        return timezone;
-    }
-
-    public void setTimezone(String timezone) {
-        this.timezone = timezone;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("deviceId", deviceId).append("groupDeveloperId", groupDeveloperId).append("deviceDeveloperId", deviceDeveloperId).append("description", description).append("deveiceName", deveiceName).append("active", active).append("latitude", latitude).append("longitude", longitude).append("timezone", timezone).append("userId", userId).toString();
+        return new ToStringBuilder(this).append("id", id).append("groupId", groupId).append("appId", appId).append("description", description).append("enabled", enabled).append("name", name).append("owner", owner).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(deveiceName).append(timezone).append(latitude).append(description).append(active).append(groupDeveloperId).append(deviceDeveloperId).append(deviceId).append(userId).append(longitude).toHashCode();
+        return new HashCodeBuilder().append(owner).append(groupId).append(appId).append(name).append(description).append(id).append(enabled).toHashCode();
     }
 
     @Override
@@ -117,7 +90,7 @@ public class Details {
             return false;
         }
         Details rhs = ((Details) other);
-        return new EqualsBuilder().append(deveiceName, rhs.deveiceName).append(timezone, rhs.timezone).append(latitude, rhs.latitude).append(description, rhs.description).append(active, rhs.active).append(groupDeveloperId, rhs.groupDeveloperId).append(deviceDeveloperId, rhs.deviceDeveloperId).append(deviceId, rhs.deviceId).append(userId, rhs.userId).append(longitude, rhs.longitude).isEquals();
+        return new EqualsBuilder().append(owner, rhs.owner).append(groupId, rhs.groupId).append(appId, rhs.appId).append(name, rhs.name).append(description, rhs.description).append(id, rhs.id).append(enabled, rhs.enabled).isEquals();
     }
 
 }

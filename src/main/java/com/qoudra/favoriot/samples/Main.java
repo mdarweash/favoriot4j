@@ -6,6 +6,7 @@
 package com.qoudra.favoriot.samples;
 
 import com.google.gson.Gson;
+import com.qoudra.favoriot.beans.CreateDeviceParam;
 import com.qoudra.favoriot.comm.FavorIoTClient;
 import com.qoudra.favoriot.comm.FavorIotRESTfulBuilder;
 
@@ -35,9 +36,9 @@ public class Main {
 //        print(favorIoTClient.getAllApplications(null, null, 0, null, 0, 0, FavorIoTClient.ORDER_ENUM.DESC, 0));
 //        print(favorIoTClient.getApplication("applicationDefault@Mdarweash"));
 //        print(favorIoTClient.addApplication("applicationDefault@Mdarweash"));
-
-        
-
+//        print(favorIoTClient.add);
+   
+//        favorIoTClient.createDevice(new CreateDeviceParam("Device name", Boolean.TRUE, API_KEY, API_KEY, API_KEY, API_KEY, API_KEY, Integer.SIZE, Integer.MIN_VALUE)
     
     }
     public static void print(Object c)

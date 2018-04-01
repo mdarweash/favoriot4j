@@ -8,7 +8,7 @@ public class CreateDeviceResponse {
 
     private Integer code;
     private String message;
-    private Details details;
+    private CreateDeviceResponseDetails details;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public Integer getCode() {
@@ -27,11 +27,11 @@ public class CreateDeviceResponse {
         this.message = message;
     }
 
-    public Details getDetails() {
+    public CreateDeviceResponseDetails getDetails() {
         return details;
     }
 
-    public void setDetails(Details details) {
+    public void setDetails(CreateDeviceResponseDetails details) {
         this.details = details;
     }
 

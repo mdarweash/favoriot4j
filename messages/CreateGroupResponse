@@ -1,0 +1,13 @@
+{
+  "code": 2011,
+  "message": "Group created",
+  "details": {
+    "_id": "b771141b-aa8b-44f3-a18a-3b29bb7579a2",
+    "group_id": "groupDefault@FAVORIOT",
+    "app_id": "applicationDefault@FAVORIOT",
+    "description": "groupDefault is a group name",
+    "enabled": true,
+    "name": "groupDefault",
+    "owner": "FAVORIOT"
+  }
+}

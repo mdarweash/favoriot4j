@@ -7,10 +7,10 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-public class GetAllStreamsByDevice {
+public class GetAllGroupsResponse {
 
     private int numResults;
-    private List<GetAllDevicesByGroupResponseResult> results = new ArrayList<GetAllDevicesByGroupResponseResult>();
+    private List<Result> results = new ArrayList<Result>();
 
     public int getNumResults() {
         return numResults;
@@ -20,11 +20,11 @@ public class GetAllStreamsByDevice {
         this.numResults = numResults;
     }
 
-    public List<GetAllDevicesByGroupResponseResult> getResults() {
+    public List<Result> getResults() {
         return results;
     }
 
-    public void setResults(List<GetAllDevicesByGroupResponseResult> results) {
+    public void setResults(List<Result> results) {
         this.results = results;
     }
 
@@ -43,10 +43,10 @@ public class GetAllStreamsByDevice {
         if (other == this) {
             return true;
         }
-        if ((other instanceof GetAllStreamsByDevice) == false) {
+        if ((other instanceof GetAllGroupsResponse) == false) {
             return false;
         }
-        GetAllStreamsByDevice rhs = ((GetAllStreamsByDevice) other);
+        GetAllGroupsResponse rhs = ((GetAllGroupsResponse) other);
         return new EqualsBuilder().append(numResults, rhs.numResults).append(results, rhs.results).isEquals();
     }
 

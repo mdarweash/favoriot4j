@@ -21,6 +21,19 @@ private Integer latitude;
 private Integer longitude;
 private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    public CreateDeviceParam(String deviceName, Boolean active, String groupDeveloperId, String description, String deviceType, String sensorType, String timezone, Integer latitude, Integer longitude) {
+        this.deviceName = deviceName;
+        this.active = active;
+        this.groupDeveloperId = groupDeveloperId;
+        this.description = description;
+        this.deviceType = deviceType;
+        this.sensorType = sensorType;
+        this.timezone = timezone;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+
 public String getDeviceName() {
 return deviceName;
 }

@@ -5,7 +5,7 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-public class Result {
+public class GetAllDevicesByGroupResponseResult {
 
     private String deviceId;
     private String groupDeveloperId;
@@ -113,10 +113,10 @@ public class Result {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Result) == false) {
+        if ((other instanceof GetAllDevicesByGroupResponseResult) == false) {
             return false;
         }
-        Result rhs = ((Result) other);
+        GetAllDevicesByGroupResponseResult rhs = ((GetAllDevicesByGroupResponseResult) other);
         return new EqualsBuilder().append(timezone, rhs.timezone).append(latitude, rhs.latitude).append(description, rhs.description).append(active, rhs.active).append(groupDeveloperId, rhs.groupDeveloperId).append(deviceDeveloperId, rhs.deviceDeveloperId).append(deviceId, rhs.deviceId).append(deviceName, rhs.deviceName).append(userId, rhs.userId).append(longitude, rhs.longitude).isEquals();
     }
 

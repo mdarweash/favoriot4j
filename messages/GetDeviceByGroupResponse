@@ -5,8 +5,5 @@
   "description": "no description",
   "device_name": "deviceDefault",
   "active": true,
-  "latitude": null,
-  "longitude": null,
-  "timezone": "Asia/Kuala_Lumpur",
   "user_id": "FAVORIOT"
 }

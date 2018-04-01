@@ -7,7 +7,7 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-public class GetAllDevicesResponse {
+public class GetAllDevicesByGroupResponse {
 
     private int numResults;
     private List<Result> results = new ArrayList<Result>();
@@ -43,10 +43,10 @@ public class GetAllDevicesResponse {
         if (other == this) {
             return true;
         }
-        if ((other instanceof GetAllDevicesResponse) == false) {
+        if ((other instanceof GetAllDevicesByGroupResponse) == false) {
             return false;
         }
-        GetAllDevicesResponse rhs = ((GetAllDevicesResponse) other);
+        GetAllDevicesByGroupResponse rhs = ((GetAllDevicesByGroupResponse) other);
         return new EqualsBuilder().append(numResults, rhs.numResults).append(results, rhs.results).isEquals();
     }
 

@@ -9,14 +9,14 @@ import com.qoudra.favoriot.beans.AddProjectResponse;
 import com.qoudra.favoriot.beans.CreateDeviceParam;
 import com.qoudra.favoriot.beans.CreateDeviceResponse;
 import com.qoudra.favoriot.beans.FavorApplicationBean;
+import com.qoudra.favoriot.beans.FavorData;
 import com.qoudra.favoriot.beans.FavorProjectBean;
 import com.qoudra.favoriot.beans.GetAllProjectsResponse;
 import com.qoudra.favoriot.beans.GetApplicationsByProjectBean;
+import com.qoudra.favoriot.beans.GetStreamByID;
 import com.qoudra.favoriot.beans.ResponseBean;
-import com.qoudra.favoriot.beans.generated.DeleteDeviceResponse;
-import com.qoudra.favoriot.beans.generated.GetAllStreamsByDevice;
-import com.qoudra.favoriot.beans.generated.GetDeviceResponse;
-import com.qoudra.favoriot.beans.generated.UpdateDeviceResponse;
+import com.qoudra.favoriot.beans.SendDataResponse;
+import com.qoudra.favoriot.beans.generated.*;
 import retrofit.http.Body;
 import retrofit.http.DELETE;
 import retrofit.http.GET;
@@ -96,6 +96,48 @@ public interface FavorIoTClient {
     @GET(value = "/applications/{application_developer_id}/groups")
     GetGroupsByApplicationResponse getGroupsByApplication(@Query("application_developer_id") String application_developer_id);
 
+    //------------------Groups-------------------
+    @POST(value = "/groups")
+    CreateDeviceResponse createGroup(@Body CreateGroupBody createGroupBody);
+
+    @GET(value = "/groups")
+    GetAllGroupsResponse getAllGroups();
+
+    @GET(value = "/groups/{group_developer_id}")
+    GetAllGroupsResponse getGroup(@Query("group_developer_id") String group_developer_id);
+
+    @PUT(value = "/groups/{group_developer_id}")
+    UpdateGroupResponse updateGroup(@Query("group_developer_id") String group_developer_id, @Body UpdateGroupBody updateGroupBody);
+
+    @DELETE(value = "/groups/{group_developer_id}")
+    DeleteGroupResponse deleteGroup(@Query("group_developer_id") String group_developer_id);
+
+    @GET(value = "/applications/{application_developer_id}/groups/{group_developer_id}")
+    GetGroupByApplicationResponse getGroupByApplication(@Query("application_developer_id") String application_developer_id, @Query("group_developer_id") String group_developer_id);
+
+    @GET(value = "/groups/{group_developer_id}/devices")
+    GetAllDevicesByGroupResponse getAllDevicesByGroup(@Query("group_developer_id") String group_developer_id);
+
+    @GET(value = "/groups/{group_developer_id}/devices/{device_developer_id}")
+    GetDeviceByGroupResponse getDeviceByGroup(@Query("group_developer_id") String group_developer_id, @Query("device_developer_id") String device_developer_id);
+
+    @POST(value = "/streams")
+    SendDataResponse sendData(@Body FavorData favorData);
+
+    //TODO 
+    @GET(value = "/streams")
+    String getDatabyDevice(@Query("device_developer_id") String device_developer_id,
+            @Query("created_at") String created_at,
+            @Query("created_from_to") String created_from_to,
+            @Query("max") int max,
+            @Query("order") String order,
+            @Query("offset") int offset);
+
+    @GET(value = "/streams/{stream_developer_id}")
+    GetStreamByID getStreamByID(@Query("stream_developer_id") String stream_developer_id);
+
+    @DELETE(value = "/streams/{stream_developer_id}")
+    GetStreamByID deleteStreamByID(@Query("stream_developer_id") String stream_developer_id);
     //------------------Devices-----------------
     @POST(value = "/devices")
     CreateDeviceResponse createDevice(@Body CreateDeviceParam createDeviceParam);

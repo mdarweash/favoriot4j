@@ -5,11 +5,11 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-public class UpdateDeviceResponse {
+public class UpdateGroupResponse {
 
     private int code;
     private String message;
-    private Details details;
+    private CreateGroupResponseDetails details;
 
     public int getCode() {
         return code;
@@ -27,11 +27,11 @@ public class UpdateDeviceResponse {
         this.message = message;
     }
 
-    public Details getDetails() {
+    public CreateGroupResponseDetails getDetails() {
         return details;
     }
 
-    public void setDetails(Details details) {
+    public void setDetails(CreateGroupResponseDetails details) {
         this.details = details;
     }
 
@@ -50,10 +50,10 @@ public class UpdateDeviceResponse {
         if (other == this) {
             return true;
         }
-        if ((other instanceof UpdateDeviceResponse) == false) {
+        if ((other instanceof UpdateGroupResponse) == false) {
             return false;
         }
-        UpdateDeviceResponse rhs = ((UpdateDeviceResponse) other);
+        UpdateGroupResponse rhs = ((UpdateGroupResponse) other);
         return new EqualsBuilder().append(details, rhs.details).append(code, rhs.code).append(message, rhs.message).isEquals();
     }
 

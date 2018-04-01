@@ -5,7 +5,7 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-public class GetDeviceResponse {
+public class GetDeviceByGroupResponse {
 
     private String deviceId;
     private String groupDeveloperId;
@@ -13,9 +13,6 @@ public class GetDeviceResponse {
     private String description;
     private String deviceName;
     private boolean active;
-    private Object latitude;
-    private Object longitude;
-    private String timezone;
     private String userId;
 
     public String getDeviceId() {
@@ -66,30 +63,6 @@ public class GetDeviceResponse {
         this.active = active;
     }
 
-    public Object getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Object latitude) {
-        this.latitude = latitude;
-    }
-
-    public Object getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Object longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getTimezone() {
-        return timezone;
-    }
-
-    public void setTimezone(String timezone) {
-        this.timezone = timezone;
-    }
-
     public String getUserId() {
         return userId;
     }
@@ -100,12 +73,12 @@ public class GetDeviceResponse {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("deviceId", deviceId).append("groupDeveloperId", groupDeveloperId).append("deviceDeveloperId", deviceDeveloperId).append("description", description).append("deviceName", deviceName).append("active", active).append("latitude", latitude).append("longitude", longitude).append("timezone", timezone).append("userId", userId).toString();
+        return new ToStringBuilder(this).append("deviceId", deviceId).append("groupDeveloperId", groupDeveloperId).append("deviceDeveloperId", deviceDeveloperId).append("description", description).append("deviceName", deviceName).append("active", active).append("userId", userId).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(timezone).append(latitude).append(description).append(active).append(groupDeveloperId).append(deviceDeveloperId).append(deviceId).append(deviceName).append(userId).append(longitude).toHashCode();
+        return new HashCodeBuilder().append(description).append(active).append(groupDeveloperId).append(deviceDeveloperId).append(deviceId).append(deviceName).append(userId).toHashCode();
     }
 
     @Override
@@ -113,11 +86,11 @@ public class GetDeviceResponse {
         if (other == this) {
             return true;
         }
-        if ((other instanceof GetDeviceResponse) == false) {
+        if ((other instanceof GetDeviceByGroupResponse) == false) {
             return false;
         }
-        GetDeviceResponse rhs = ((GetDeviceResponse) other);
-        return new EqualsBuilder().append(timezone, rhs.timezone).append(latitude, rhs.latitude).append(description, rhs.description).append(active, rhs.active).append(groupDeveloperId, rhs.groupDeveloperId).append(deviceDeveloperId, rhs.deviceDeveloperId).append(deviceId, rhs.deviceId).append(deviceName, rhs.deviceName).append(userId, rhs.userId).append(longitude, rhs.longitude).isEquals();
+        GetDeviceByGroupResponse rhs = ((GetDeviceByGroupResponse) other);
+        return new EqualsBuilder().append(description, rhs.description).append(active, rhs.active).append(groupDeveloperId, rhs.groupDeveloperId).append(deviceDeveloperId, rhs.deviceDeveloperId).append(deviceId, rhs.deviceId).append(deviceName, rhs.deviceName).append(userId, rhs.userId).isEquals();
     }
 
 }

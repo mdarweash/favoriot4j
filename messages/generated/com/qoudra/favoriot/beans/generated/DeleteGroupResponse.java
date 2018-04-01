@@ -5,11 +5,10 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-public class UpdateDeviceResponse {
+public class DeleteGroupResponse {
 
     private int code;
     private String message;
-    private CreateGroupResponseDetails details;
 
     public int getCode() {
         return code;
@@ -27,22 +26,14 @@ public class UpdateDeviceResponse {
         this.message = message;
     }
 
-    public CreateGroupResponseDetails getDetails() {
-        return details;
-    }
-
-    public void setDetails(CreateGroupResponseDetails details) {
-        this.details = details;
-    }
-
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("code", code).append("message", message).append("details", details).toString();
+        return new ToStringBuilder(this).append("code", code).append("message", message).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(details).append(code).append(message).toHashCode();
+        return new HashCodeBuilder().append(message).append(code).toHashCode();
     }
 
     @Override
@@ -50,11 +41,11 @@ public class UpdateDeviceResponse {
         if (other == this) {
             return true;
         }
-        if ((other instanceof UpdateDeviceResponse) == false) {
+        if ((other instanceof DeleteGroupResponse) == false) {
             return false;
         }
-        UpdateDeviceResponse rhs = ((UpdateDeviceResponse) other);
-        return new EqualsBuilder().append(details, rhs.details).append(code, rhs.code).append(message, rhs.message).isEquals();
+        DeleteGroupResponse rhs = ((DeleteGroupResponse) other);
+        return new EqualsBuilder().append(message, rhs.message).append(code, rhs.code).isEquals();
     }
 
 }

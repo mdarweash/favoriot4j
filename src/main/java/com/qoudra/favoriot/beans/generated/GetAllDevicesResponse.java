@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 public class GetAllDevicesResponse {
 
     private int numResults;
-    private List<Result> results = new ArrayList<Result>();
+    private List<GetAllDevicesByGroupResponseResult> results = new ArrayList<GetAllDevicesByGroupResponseResult>();
 
     public int getNumResults() {
         return numResults;
@@ -20,11 +20,11 @@ public class GetAllDevicesResponse {
         this.numResults = numResults;
     }
 
-    public List<Result> getResults() {
+    public List<GetAllDevicesByGroupResponseResult> getResults() {
         return results;
     }
 
-    public void setResults(List<Result> results) {
+    public void setResults(List<GetAllDevicesByGroupResponseResult> results) {
         this.results = results;
     }
 

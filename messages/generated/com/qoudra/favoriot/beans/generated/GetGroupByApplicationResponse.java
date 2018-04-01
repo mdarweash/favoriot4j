@@ -5,11 +5,11 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-public class Result {
+public class GetGroupByApplicationResponse {
 
     private String groupId;
+    private String applicationDeveloperId;
     private String groupDeveloperId;
-    private String appDeveloperId;
     private String description;
     private String groupName;
     private boolean active;
@@ -23,20 +23,20 @@ public class Result {
         this.groupId = groupId;
     }
 
+    public String getApplicationDeveloperId() {
+        return applicationDeveloperId;
+    }
+
+    public void setApplicationDeveloperId(String applicationDeveloperId) {
+        this.applicationDeveloperId = applicationDeveloperId;
+    }
+
     public String getGroupDeveloperId() {
         return groupDeveloperId;
     }
 
     public void setGroupDeveloperId(String groupDeveloperId) {
         this.groupDeveloperId = groupDeveloperId;
-    }
-
-    public String getAppDeveloperId() {
-        return appDeveloperId;
-    }
-
-    public void setAppDeveloperId(String appDeveloperId) {
-        this.appDeveloperId = appDeveloperId;
     }
 
     public String getDescription() {
@@ -73,12 +73,12 @@ public class Result {
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this).append("groupId", groupId).append("groupDeveloperId", groupDeveloperId).append("appDeveloperId", appDeveloperId).append("description", description).append("groupName", groupName).append("active", active).append("userId", userId).toString();
+        return new ToStringBuilder(this).append("groupId", groupId).append("applicationDeveloperId", applicationDeveloperId).append("groupDeveloperId", groupDeveloperId).append("description", description).append("groupName", groupName).append("active", active).append("userId", userId).toString();
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(appDeveloperId).append(groupName).append(groupId).append(description).append(active).append(groupDeveloperId).append(userId).toHashCode();
+        return new HashCodeBuilder().append(groupName).append(groupId).append(description).append(active).append(groupDeveloperId).append(userId).append(applicationDeveloperId).toHashCode();
     }
 
     @Override
@@ -86,11 +86,11 @@ public class Result {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Result) == false) {
+        if ((other instanceof GetGroupByApplicationResponse) == false) {
             return false;
         }
-        Result rhs = ((Result) other);
-        return new EqualsBuilder().append(appDeveloperId, rhs.appDeveloperId).append(groupName, rhs.groupName).append(groupId, rhs.groupId).append(description, rhs.description).append(active, rhs.active).append(groupDeveloperId, rhs.groupDeveloperId).append(userId, rhs.userId).isEquals();
+        GetGroupByApplicationResponse rhs = ((GetGroupByApplicationResponse) other);
+        return new EqualsBuilder().append(groupName, rhs.groupName).append(groupId, rhs.groupId).append(description, rhs.description).append(active, rhs.active).append(groupDeveloperId, rhs.groupDeveloperId).append(userId, rhs.userId).append(applicationDeveloperId, rhs.applicationDeveloperId).isEquals();
     }
 
 }

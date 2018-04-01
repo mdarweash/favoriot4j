@@ -5,7 +5,7 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-public class UpdateDeviceResponse {
+public class CreateGroupResponse {
 
     private int code;
     private String message;
@@ -50,10 +50,10 @@ public class UpdateDeviceResponse {
         if (other == this) {
             return true;
         }
-        if ((other instanceof UpdateDeviceResponse) == false) {
+        if ((other instanceof CreateGroupResponse) == false) {
             return false;
         }
-        UpdateDeviceResponse rhs = ((UpdateDeviceResponse) other);
+        CreateGroupResponse rhs = ((CreateGroupResponse) other);
         return new EqualsBuilder().append(details, rhs.details).append(code, rhs.code).append(message, rhs.message).isEquals();
     }
 

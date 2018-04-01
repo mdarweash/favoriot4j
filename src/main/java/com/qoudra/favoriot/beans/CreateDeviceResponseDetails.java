@@ -4,7 +4,7 @@ package com.qoudra.favoriot.beans;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Details {
+public class CreateDeviceResponseDetails {
 
     private String deviceId;
     private String deviceDeveloperD;
